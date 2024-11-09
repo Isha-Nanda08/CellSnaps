@@ -5,6 +5,8 @@ const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
+const run = require('./AIMODEL.js');
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
@@ -14,6 +16,14 @@ app.use(cors({
 }));
 
 app.use('/auth', authRoutes);
+
+
+app.post('/gemini_response', async (req, res) => {
+    var text = req.body.text;
+    var ai_res = await run(text);
+    res.json({ message: ai_res });
+});
+
 
 const PORT = process.env.PORT || 3080;
 mongoose();
