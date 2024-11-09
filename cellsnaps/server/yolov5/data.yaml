@@ -1,5 +1,0 @@
-train: ../data/images/train/
-val: ../data/images/val/
-test: ../data/images/test/
-nc: 3
-names: ['WBC', 'RBC','Platelet']
