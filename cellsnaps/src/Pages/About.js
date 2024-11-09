@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../Styles/About.css'; // Import the CSS file for styling
-import Injection from '../components/Injection';
+import Injection from '../Components/Injection';
 
 // Individual card component
 const Card = ({ title, imageSrc, description, linkText, linkHref }) => {

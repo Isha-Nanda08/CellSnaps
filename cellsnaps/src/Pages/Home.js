@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/Home.css';
-import Header from '../components/Header';
+
+
+import Header from '../Components/Header';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import About from './About';
-import Injection from '../components/Injection';
+import Injection from '../Components/Injection';
 
 const Home = () => {
   const [files, setFiles] = useState([]);
@@ -47,18 +49,18 @@ const Home = () => {
         <Injection />
       </div>
       <About />
-      
+
       <div className='main'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="myfile">Upload at least three files:</label>
           <br />
-          <input 
-            type="file" 
-            id="myfile" 
-            name="myfile" 
-            accept="image/*" 
-            multiple 
-            onChange={handleFileChange} 
+          <input
+            type="file"
+            id="myfile"
+            name="myfile"
+            accept="image/*"
+            multiple
+            onChange={handleFileChange}
           />
           <br />
           <input type="submit" value="Submit" />
