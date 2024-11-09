@@ -1,0 +1,62 @@
+/* Styles for the About component */
+
+.about-container {
+    height: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    /* background-color: #f1e3f7; Light background */
+    flex-wrap: wrap; /* Makes cards wrap on smaller screens */
+    /* background-image: linear-gradient(rgb(241, 227, 252),white); */
+    background-image: url('https://cdn.prod.website-files.com/621e95f9ac30687a56e4297e/64adc554c4386d437c8fe1c0_V2_1610500842032_b507308e-9922-465a-a3fb-05c82a410450.png');
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    
+
+  }
+
+  .card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    color: #007bff;
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
