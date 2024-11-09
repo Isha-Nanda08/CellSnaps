@@ -1,5 +1,4 @@
-// Home.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/Home.css';
 import Header from '../components/Header';
 import AOS from 'aos';
@@ -8,14 +7,28 @@ import About from './About';
 import Injection from '../components/Injection';
 
 const Home = () => {
+  const [files, setFiles] = useState([]);
+
+  // Initialize AOS (Animation on Scroll)
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  // Handle file input change
+  const handleFileChange = (event) => {
+    setFiles(event.target.files);
+  };
+
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here (e.g., uploading the files)
+    console.log(files);
+  };
+
   return (
     <>
-      <Header/>
-      
+      <Header />
       <div className='cellSnap'>
         <div className="container">
           <div className="balls-container">
@@ -29,21 +42,28 @@ const Home = () => {
           </div>
         </div>
         <div className='title typewriter'>
-            <span>CellSnaps</span>
+          <span>CellSnaps</span>
         </div>
-        <Injection/>
+        <Injection />
       </div>
-      <About/>
+      <About />
+      
       <div className='main'>
-        <form action="">
-          <label htmlFor="myfile">Upload a file:</label>
-          <br/>
-          <input type="file" id="myfile" name="myfile" accept='image/*'/>
-          <br/>
-          <input type="submit" value="Submit"/>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="myfile">Upload at least three files:</label>
+          <br />
+          <input 
+            type="file" 
+            id="myfile" 
+            name="myfile" 
+            accept="image/*" 
+            multiple 
+            onChange={handleFileChange} 
+          />
+          <br />
+          <input type="submit" value="Submit" />
         </form>
       </div>
-      
     </>
   );
 };
