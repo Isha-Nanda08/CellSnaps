@@ -40,7 +40,7 @@ function App() {
         </Route>
           )
         }
-
+        
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
