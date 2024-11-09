@@ -11,7 +11,7 @@ from PIL import Image
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:3000"])
 
-model = torch.hub.load("ultralytics/yolov5", "custom", path="best.pt")
+model = torch.hub.load("ultralytics/yolov5", "custom", path="best.pt", force_reload=True)
 model.iou = 0.20
 model.conf = 0.50
 
