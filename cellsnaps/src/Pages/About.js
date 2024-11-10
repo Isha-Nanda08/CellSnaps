@@ -31,25 +31,15 @@ const About = () => {
     <Header/>
     <div className="about-container">
       <Card
-        title="Educational Resources"
+       
         imageSrc="https://www.allencell.org/uploads/8/1/9/9/81996008/published/icon-educationalresources.png?1558495128" // Replace with the correct path
-        description="Learn how teachers use allencell.org data & tools in educational settings"
-        linkText="Learn more"
-        linkHref="#"
+       
       />
       <Card
-        title="Visual Guide to Human Cells"
-        imageSrc="/path_to_image2.png" // Replace with the correct path
-        description="An interactive overview of hiPS cell 3D structure & function"
-        linkText="Explore"
-        linkHref="#"
+        imageSrc="https://www.allencell.org/uploads/8/1/9/9/81996008/published/icon-educationalresources.png?1558495128" // Replace with the correct path
       />
       <Card
-        title="AC Research Projects"
-        imageSrc="/path_to_image3.png" // Replace with the correct path
-        description="How can we make sense of all this data?"
-        linkText="Pathtrace rendering"
-        linkHref="#"
+       imageSrc="https://www.allencell.org/uploads/8/1/9/9/81996008/published/icon-educationalresources.png?1558495128" // Replace with the correct path
       />
       {/* <Injection/> */}
     </div>
