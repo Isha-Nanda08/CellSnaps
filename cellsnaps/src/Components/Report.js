@@ -29,7 +29,10 @@ export default function Report({gemini_res,setGeminiRes, data}) {
             <MyComponent text={gemini_res}/>
         </div>
         <div>
-            <button onClick={()=>setGeminiRes("")}>reupload</button>
+          <button onClick={()=>setGeminiRes("")}>Re Upload</button>
+        </div>
+        {/* <div>
+            
             {data.output_images? data.output_images.map((image, index) => (
         <div key={index}>
           <img src={image.url} alt={`Image ${index + 1}`} width="100" />
@@ -37,8 +40,8 @@ export default function Report({gemini_res,setGeminiRes, data}) {
             Image {index + 1}
           </button>
         </div>
-      )): ""}
-        </div>
+      )): ""} */}
+        {/* </div> */}
     </div>
   )
 }
