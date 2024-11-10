@@ -1,0 +1,11 @@
+.model{
+    height: 200px;
+    /* width: 200px; */
+    margin-bottom: 200px;
+}
+.content{
+    text-align: left;
+    margin-top: 20px;
+    line-height: 20px;
+    
+}
