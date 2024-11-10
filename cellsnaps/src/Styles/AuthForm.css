@@ -17,7 +17,7 @@ section {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(67, 153, 219, 0.4);
 }
 
 form {
@@ -26,10 +26,11 @@ form {
     justify-content: space-evenly;
     flex-grow: 1;
     padding-bottom: 1rem;
+    background: #69c9df;
 }
 
 a, a:visited {
-    color: #fff;
+    color: #827777;
 }
 
 input[type="text"],

@@ -27,15 +27,53 @@ async function run(text) {
       {
         role: "user",
         parts: [
-          {text: "- RBC (Red Blood Cells) count: 5.2 million cells/µL\n- WBC (White Blood Cells) count: 6.5 thousand cells/µL\n- Platelet count: 270 thousand cells/µL\n- Age: 29 years\n- Gender: Male\n\nGiven these details, provide an analysis of the patient's health. Consider normal ranges for these blood parameters and offer any potential concerns or recommendations based on the counts provided, along with age and gender. If the values are abnormal, suggest possible medical conditions that might require further investigation."},
+          {
+            text: `
+      - RBC (Red Blood Cells) count: 5.2 million cells/µL
+      - WBC (White Blood Cells) count: 6.5 thousand cells/µL
+      - Platelet count: 270 thousand cells/µL
+      - Age: 29 years
+      - Gender: Male
+
+      Provide a concise, bullet-pointed analysis of the patient's health based on these details. Compare each parameter to the normal range, identify any concerns, and offer brief recommendations. Format the response using Markdown for readability, aiming for 50 words per parameter and an overall visually appealing structure.
+      `
+          },
         ],
       },
       {
-        role: "model",
-        parts: [
-          {text: "## Analysis of Blood Counts:\n\n**Red Blood Cell (RBC) Count:** 5.2 million cells/µL\n\n* **Normal Range:** 4.7 - 6.1 million cells/µL for males\n* **Analysis:** The patient's RBC count is within the normal range for his age and gender. This indicates healthy oxygen-carrying capacity of the blood.\n\n**White Blood Cell (WBC) Count:** 6.5 thousand cells/µL\n\n* **Normal Range:** 4.5 - 11.0 thousand cells/µL for males\n* **Analysis:** The patient's WBC count is also within the normal range. This suggests that his immune system is functioning normally.\n\n**Platelet Count:** 270 thousand cells/µL\n\n* **Normal Range:** 150 - 400 thousand cells/µL \n* **Analysis:** The platelet count is within the normal range. This indicates normal blood clotting ability.\n\n**Overall Interpretation:**\n\nBased on these blood count values, the patient appears to have normal hematological parameters. There are no immediate concerns raised by the provided information. \n\n**Potential Recommendations:**\n\n* **Regular Check-ups:** As part of general health maintenance, it is always advisable to undergo regular blood tests and check-ups, especially after the age of 30. This can help identify any potential health issues early on.\n* **Lifestyle Factors:** Maintaining a healthy lifestyle with regular exercise, a balanced diet, and adequate sleep can help contribute to overall health and well-being.\n* **Further Investigations:** If the patient experiences any symptoms such as fatigue, weakness, bruising, or bleeding, further investigations may be warranted.\n\n**Important Note:** This analysis is based solely on the provided blood count values and cannot be considered a definitive medical diagnosis. It is crucial to consult with a healthcare professional for a comprehensive evaluation and interpretation of any health concerns. \n"},
-        ],
-      },
+        "role": "model",
+        "parts": [
+          {
+            "text": `
+
+# Health Analysis
+
+## Red Blood Cell (RBC) Count
+- **Value:** 5.2 million cells/µL
+- **Normal Range:** 4.7 - 6.1 million cells/µL (Male)
+- **Status:** Within normal range; suggests healthy oxygen levels.
+\n
+## White Blood Cell (WBC) Count
+- **Value:** 6.5 thousand cells/µL
+- **Normal Range:** 4.5 - 11.0 thousand cells/µL
+- **Status:** Normal; immune system appears healthy.
+\n
+## Platelet Count
+- **Value:** 270 thousand cells/µL
+- **Normal Range:** 150 - 400 thousand cells/µL
+- **Status:** Normal; indicates stable clotting.
+\n
+## Summary & Recommendations
+- **Overall:** Blood parameters are within normal limits, no immediate concerns.
+- **Suggestions:**
+  - Regular health check-ups, especially post-30.
+  - Maintain a balanced lifestyle with exercise, diet, and rest.
+\n
+> **Note:** This is an analysis based on blood values alone; consult a healthcare provider for a full assessment.
+`
+          }
+        ]
+      }
     ],
   });
 

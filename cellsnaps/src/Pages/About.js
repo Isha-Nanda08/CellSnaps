@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../Styles/About.css'; // Import the CSS file for styling
 import Injection from '../Components/Injection';
+import Header from '../Components/Header';
 
 // Individual card component
 const Card = ({ title, imageSrc, description, linkText, linkHref }) => {
@@ -26,7 +27,8 @@ const About = () => {
     });
   }, []);
 
-  return (
+  return (<>
+    <Header/>
     <div className="about-container">
       <Card
         title="Educational Resources"
@@ -51,6 +53,7 @@ const About = () => {
       />
       {/* <Injection/> */}
     </div>
+    </>
   );
 };
 

@@ -40,7 +40,7 @@ function App() {
           <Route element={<PersistLogin />}>
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route path="/" element={<Home />} />
-          </Route>
+           </Route>
           </Route>
         )}
 
@@ -53,7 +53,6 @@ function App() {
 
         </Route>
       </Routes>
-      <Footer/>
     </Router>
   );
 }

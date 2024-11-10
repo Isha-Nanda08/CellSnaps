@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import '../Styles/Home.css';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import React, { useEffect, useState } from 'react';
 import axios from '../api/axios';
 import Header from '../Components/Header';
 import Injection from '../Components/Injection';
 import Report from '../Components/Report';
-import About from './About';
+import '../Styles/Home.css';
 const Home = () => {
   const [files, setFiles] = useState([]);
   const [gemini_res, setGeminiRes] = useState("");
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [input_ai, setInputAi] = useState("");
+  const [res_data, setResData] = useState({});
+   // State variables for Age and Gender
+
+   const [age, setAge] = useState('');
+   const [gender, setGender] = useState('');
 
   // Initialize AOS (Animation on Scroll)
   useEffect(() => {
@@ -48,7 +51,10 @@ const Home = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Processed Images:', data);
-        let text = `RBC (Red Blood Cells) count: ${data.density_data.RBC.average_cell_density_uL} cells/µL\n- WBC (White Blood Cells) count: ${data.density_data.WBC.average_cell_density_uL} cells/µL\n- Platelet count: ${data.density_data.Platelet.average_cell_density_uL} cells/µL\n- Age: 29 years\n- Gender: Male`;
+
+        setResData(data);
+
+        let text = `RBC (Red Blood Cells) count: ${data.density_data.RBC.average_cell_density_uL} cells/µL\n- WBC (White Blood Cells) count: ${data.density_data.WBC.average_cell_density_uL/100} cells/µL\n- Platelet count: ${data.density_data.Platelet.average_cell_density_uL} cells/µL\n- Age: ${age} years\n- Gender: ${gender}`;
 
         setInputAi(text);
 
@@ -67,7 +73,30 @@ const Home = () => {
       console.error("Error:", error);
     }
 
+    // let text = `RBC (Red Blood Cells) count: 5543483 cells/µL\n- WBC (White Blood Cells) count: 2917.62 cells/µL\n- Platelet count: 182351 cells/µL\n- Age: 29 years\n- Gender: Male`;
+
+    //     setInputAi(text);
+
+    //     axios.post('/gemini_response', {text: input_ai},{
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     }).then(function(response){
+    //       setGeminiRes(response.data.message);
+    //     });
   };
+
+
+
+    // Handle Age change
+    const handleAgeChange = (event) => {
+      setAge(event.target.value); // Update the state with the input value
+    };
+
+    // Handle Gender change
+    const handleGenderChange = (event) => {
+      setGender(event.target.value); // Update the state with the input value
+    };
 
   return (
     <>
@@ -87,13 +116,14 @@ const Home = () => {
         <div className='title typewriter'>
           <span>CellSnaps</span>
         </div>
+        <div>
         <Injection />
+        </div>
       </div>
-      <About />
 
       <div className='main'>
-        {gemini_res?<Report gemini_res={gemini_res} setGeminiRes={setGeminiRes}/>:<form onSubmit={handleSubmit}>
-          <label htmlFor="myfile">Upload at least three files:</label>
+        {gemini_res?<Report gemini_res={gemini_res} setGeminiRes={setGeminiRes} data ={res_data}/>:<form onSubmit={handleSubmit}>
+          <label htmlFor="myfile"  id='myfileLabel'>Upload at least three files:</label>
           <br />
           <input
             type="file"
@@ -104,9 +134,28 @@ const Home = () => {
             onChange={handleFileChange}
           />
           <br/>
-          <input type="submit" value="Submit" />
-        </form>}
 
+          <input
+        type="number"
+        placeholder="Age"
+        id="age_input"
+        value={age}
+        onChange={handleAgeChange}
+        min="0" max="120" step="1"
+      />
+
+          <br/>
+          <input
+        type="text"
+        placeholder="Gender"
+        id="gender_input"
+        value={gender}
+        onChange={handleGenderChange}
+      />
+
+          <br/>
+          <input type="submit" value="Analyse" />
+        </form>}
       </div>
     </>
   );
