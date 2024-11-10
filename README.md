@@ -95,11 +95,11 @@ Dataset: BCCD dataset of blood smear images
 Blood Cells Identified: Red blood cells (RBCs), white blood cells (WBCs), and platelets
 Training: The YOLO framework is trained with a modified configuration to improve accuracy and efficiency.
 
-##Results
+#Results
 The model can identify and count blood cells from smear images in less than a second.
 The trained model is generalized and performs well on smear images from different datasets.
 
-##Applications
+#Applications
 This automated system can significantly reduce the time and effort required for blood cell counting in medical diagnostics.
 It provides a reliable and efficient alternative to manual counting, improving accuracy and consistency.
 
