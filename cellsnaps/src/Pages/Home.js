@@ -89,9 +89,10 @@ const Home = () => {
         </div>
         <Injection />
       </div>
-      <About />
+     
 
       <div className='main'>
+        <div className="contain">
         {gemini_res?<Report gemini_res={gemini_res} setGeminiRes={setGeminiRes}/>:<form onSubmit={handleSubmit}>
           <label htmlFor="myfile">Upload at least three files:</label>
           <br />
@@ -106,8 +107,9 @@ const Home = () => {
           <br/>
           <input type="submit" value="Submit" />
         </form>}
-
+        </div>
       </div>
+      <About />
     </>
   );
 };

@@ -7,12 +7,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h4>The Institute</h4>
+          
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Diversity, Equity, & Inclusion</a></li>
-            <li><a href="#">Archived Content</a></li>
+            <li><a href="#">Results</a></li>
+          
           </ul>
         </div>
 
@@ -46,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Copyright © 2024 Allen Institute. All Rights Reserved.</p>
+        <p>Copyright © 2024 cellsnaps. All Rights Reserved.</p>
       </div>
     </footer>
   );

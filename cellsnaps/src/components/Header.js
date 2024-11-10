@@ -25,15 +25,14 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="path_to_logo" alt="Logo" className="logo-image" />
-        <h1>CellSnaps for <span>CELL SCIENCE</span></h1>
+        <img src="/images/logo.png" alt="Logo" className="logo-image" />
+        <h1>CellSnaps</h1>
       </div>
       <nav className="nav">
         <a href="#about">About</a>
-        <a href="#collection">cell</a>
-        <a href="#tools">Data & Digital Tools</a>
-        <a href="#analysis">Analysis & Modeling</a>
-        <a href="#publications">Publications</a>
+        <a href="/a">cell</a>
+        
+        
         <a href="#education">Education</a>
         <div className='wrapper_btn'>
         <button onClick={handleLogout} style={{ padding: '8px 16px', cursor: 'pointer' }} id='login_btn' >
